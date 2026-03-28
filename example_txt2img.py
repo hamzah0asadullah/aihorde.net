@@ -9,7 +9,7 @@ from   time        import time
 models: tuple[list[Exception], bool] | tuple[list[str] | bool] = horde.fetch_models(
     model_type="txt2img",         # choose from txt2txt and txt2img
     return_raw=False,             # return True uses more bandwidth and is generally only useful in very rare cases
-    min_threads=None,             # Per documentation: "Filter only models that have at least this amount of threads serving." Only god knows that this actually refers too.
+    min_threads=None,             # Per documentation: "Filter only models that have at least this amount of threads serving." Only god knows what this actually refers to.
     max_threads=None,             # Opposite of min_threads. "None" means the function ignores this argument and leaves it to the API to figure out.
     model_state="all",            # Choose from all, known and custom.
     x_fields="name",              # What fields the API should return. If return_raw=True, this is set to "name" by the function, since that's all it's going to return.
