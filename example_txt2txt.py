@@ -35,8 +35,8 @@ model = models[int(input(">_ Enter desired model's index: "))]
 
 # Fetch model statistics
 model_stats: tuple[dict, bool] | tuple[list[Exception], bool] = horde.fetch_model(
-    model_name=model,
-    x_fields="count,performance,queued,jobs,eta,type", # all fields except model name, since we already know that
+    model_name=model, model_type="txt2txt",
+    x_fields="count,performance,queued,jobs,eta,type,name", # all fields are default
     retries=horde.default_retries,
     timeout=horde.inf_timeout
 )

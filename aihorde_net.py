@@ -78,9 +78,9 @@ def fetch_models(model_type: str = "txt2txt", return_raw: bool = False, min_thre
             exceptions.append(e)
     return exceptions, False
 
-def fetch_model(model_name: str, x_fields: str | None = "count,performance,queued,jobs,eta,type", retries: int = default_retries, timeout: float | None = inf_timeout) -> tuple:
+def fetch_model(model_name: str, model_type: str = "txt2txt", x_fields: str | None = "count,performance,queued,jobs,eta,type,name", retries: int = default_retries, timeout: float | None = inf_timeout) -> tuple:
     # Note: I know the AI Horde thinks it has an endpoint for this, but that endpoint cannot handle forward slashes (even if replaced by %2F) while most of its models have that in their name.
-    response = fetch_models(x_fields=x_fields, timeout=timeout, retries=retries, return_raw=True)
+    response = fetch_models(model_type=model_type, x_fields=x_fields, timeout=timeout, retries=retries, return_raw=True)
     if not response[1]:
         return response
     for v in response[0]:
