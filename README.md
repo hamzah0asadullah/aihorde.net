@@ -5,4 +5,4 @@ and or try out its [text-to-text](https://lite.koboldai.net/) and [text-to-image
 
 You may read example scripts for generating both [text-to-text](./example_txt2txt.py) and [text-to-image](./example_txt2img.py).
 
-A more detailed README will be uploaded shortly.
+A more detailed README will be uploaded when I have time after my final exams.
